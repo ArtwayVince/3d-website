@@ -3,6 +3,8 @@ import styled from "styled-components";
 import Navbar from "./Navbar";
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls, Sphere, MeshDistortMaterial } from "@react-three/drei";
+import "../heroSpinner.css";
+
 
 const Section = styled.div`
   height: 100vh;
@@ -48,6 +50,8 @@ const Title = styled.h1`
 
   @media only screen and (max-width: 768px) {
     text-align: center;
+    font-size: 28px;
+
   }
 `;
 
@@ -63,6 +67,11 @@ const Line = styled.img`
 
 const Subtitle = styled.h2`
   color: #add8e6;
+  @media only screen and (max-width: 768px) {
+    text-align: center;
+    font-size: 28px;
+
+  }
 `;
 
 const Desc = styled.p`
@@ -71,6 +80,7 @@ const Desc = styled.p`
   @media only screen and (max-width: 768px) {
     padding: 20px;
     text-align: center;
+    font-size: 12px;
   }
 `;
 
@@ -92,7 +102,9 @@ const Right = styled.div`
   position: relative;
   @media only screen and (max-width: 768px) {
     flex: 1;
-    width: 100%;
+    width: 30%;
+    top:-280px;
+    justify-content: center;
   }
 `;
 const Img = styled.img`
@@ -128,7 +140,7 @@ const Hero = () => {
     <Section>
       <Container>
       <Left>
-          <Title>Welcome to <span style={{color:'#da4ea2'}}>Qlub365</span></Title>
+          <Title>Welcome to <span style={{color:'#add8e6'}}>Qlub365</span></Title>
           <WhatWeDo>
             <Line src="./img/line.png" />
             <Subtitle>What we Do</Subtitle>
@@ -140,25 +152,21 @@ const Hero = () => {
           <Button>Learn More</Button>
         </Left>
 
-        <Right>
-        <Canvas>
-            <Suspense fallback={null}>
-              <OrbitControls enableZoom={false} />
-              <ambientLight intensity={1} />
-              <directionalLight position={[3, 2, 1]} />
-              <Sphere args={[1, 100, 200]} scale={2.4}>
-                <MeshDistortMaterial
-                  color="#3d1c56"
-                  attach="material"
-                  distort={0.5}
-                  speed={2}
-                />
-              </Sphere>
-            </Suspense>
-          </Canvas>
-        <Img src="./img/solveP.png" />
-        </Right>
-      </Container>
+      <Right>  
+     <div className ="box">
+     <span style = {{"--i":2}}><img src="./img/helpPeople.png"/></span>
+     <span style = {{"--i":1}}><img src="./img/fixT1.jpg"/></span>
+     <span style = {{"--i":3}}><img src="./img/logo1.png"/></span>
+     <span style = {{"--i":4}}><img src="./img/people.png"/></span>
+     <span style = {{"--i":5}}><img src="./img/Tp1.jpg"/></span>
+     <span style = {{"--i":6}}><img src="./img/homes.jpg"/></span>
+     <span style = {{"--i":7}}><img src="./img/kefianoHQU.png"/></span>
+     <span style = {{"--i":8}}><img src="./img/cbt.jpg"/></span>
+     <img src= "./img/logo_removeBg.png"style = {{height:'150px', width:'150px'}}>
+       </img>
+    </div>
+    </Right>
+    </Container>
     </Section>
     </>
   )

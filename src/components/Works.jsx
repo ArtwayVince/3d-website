@@ -93,6 +93,8 @@ const ListItem = styled.li`
 
 const Right = styled.div`
   flex: 1;
+  position: relative;
+  
 `;
 
 const Works = () => {
@@ -110,13 +112,13 @@ const Works = () => {
           </List>
         </Left>
         <Right>
-          {work === "Transportation" ? (
-            <Transport />
-          ) : work === "Automobile" ? (
+          {work === "Automobile" ? (
             <Automobile />
-          ) : work === "Real Estate" ? (
-            <Realty />):(
+          ) : work === "ICT" ? (
             <Ict />
+          ) : work === "Real Estate" ? (
+            <Automobile />):(
+            <Automobile/>
           )}
         </Right>
       </Container>
